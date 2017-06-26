@@ -1,5 +1,5 @@
-window.onload = function () {
-	var fade = document.querySelectorAll('.navbar-dropdown');
+function ready() {
+	var fadeElem = document.querySelectorAll('.navbar-dropdown');
 	var body = document.body;
 	var navbar = document.querySelector('.navbar');
 	var banner = document.querySelector('.banner__content');
@@ -7,36 +7,36 @@ window.onload = function () {
 
 	animation();
 
-	body.addEventListener('scroll', function(e) {
-		if (window.pageYOffset > 228) {
-			scroll();
-			alert('heloo');
+	window.onscroll = function() {
+		var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+		if (scrolled > 210) {
+			fade();
 		};
-	}
-
-	body.addEventListener('onclick', function())
+	};
 
 	body.onclick = function(e) {
 		if (e.target.classList.contains('whatsup')) {
-			fade[0].style.display = 'block';
-			fade[1].style.display = 'none';
+			fadeElem[0].style.display = 'block';
+			fadeElem[1].style.display = 'none';
 		} else if (e.target.classList.contains('work')) {
-			fade[1].style.display = 'block';
-			fade[0].style.display = 'none';
+			fadeElem[1].style.display = 'block';
+			fadeElem[0].style.display = 'none';
 		} else {
-			fade[0].style.display = 'none';
-			fade[1].style.display = 'none';
+			fadeElem[0].style.display = 'none';
+			fadeElem[1].style.display = 'none';
 		}
-	}
+	};
 
 	function animation() {
 		navbar.style.top = 0 + 'px';
 		banner.style.top = 0 + 'px';
 	}
 
-	function scroll() {
+	function fade() {
 		for (var i = 0; i < advantages.length; i++) {
-			advantages[i].style.opacity = 1;
+			advantages[i].style.transform = 'scale(1)';
 		}
 	}
 }
+
+document.addEventListener("DOMContentLoaded", ready);

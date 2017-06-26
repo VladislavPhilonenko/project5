@@ -92,6 +92,13 @@
 	.technics__inner {
 		height: 250px;
 	}
+	.stock {
+		padding: 20px 0px;
+	}
+	.stock__main-content {
+		width: 400px;
+		padding: 20px 10px;
+	}
 	.button-fixed {
 		right: 0;
 	}
@@ -172,6 +179,13 @@
 		padding: 6px 9px;
 		font-size: 11px;
 		left: 27%;
+	}
+	.stock {
+		padding: 20px 0px;
+	}
+	.stock__main-content {
+		width: 98%;
+		padding: 20px 5px;
 	}
 	.button-fixed {
 		right: 0;
