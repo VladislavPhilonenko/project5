@@ -4,14 +4,25 @@ function ready() {
 	var navbar = document.querySelector('.navbar');
 	var banner = document.querySelector('.banner__content');
 	var advantages = document.querySelectorAll('.advantages__elem');
-
-	animation();
+	var workPlanElements = document.querySelectorAll('.work-plan__elem');
 
 	window.onscroll = function() {
 		var scrolled = window.pageYOffset || document.documentElement.scrollTop;
 		if (scrolled > 210) {
-			fade();
+			advantages.forEach(function(item, i, arr) {
+				setTimeout(function() {
+					arr[i].style.transform = 'scale(1)';
+				}, 200 * i)
+			})
 		};
+		if (scrolled > 4140) {
+			workPlanElements.forEach(function(item, i, arr) {
+				setTimeout(function() {
+					arr[i].style.opacity = 1;
+		 			arr[i].style.left = 0 + 'px';
+				}, 500 * i)
+			})
+		}
 	};
 
 	body.onclick = function(e) {
@@ -27,16 +38,12 @@ function ready() {
 		}
 	};
 
+	animation();
+
 	function animation() {
 		navbar.style.top = 0 + 'px';
 		banner.style.top = 0 + 'px';
-	}
-
-	function fade() {
-		for (var i = 0; i < advantages.length; i++) {
-			advantages[i].style.transform = 'scale(1)';
-		}
-	}
+	};
 }
 
 document.addEventListener("DOMContentLoaded", ready);

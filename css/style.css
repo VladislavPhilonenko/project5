@@ -305,7 +305,11 @@ hr {
 	text-transform: uppercase;
 }
 .work-plan__elem {
+	position: relative;
+	left: -200px;
 	margin-top: 40px;
+	opacity: 0;
+	transition: all 1s;
 }
 .work-plan__img {
 	display: flex;
