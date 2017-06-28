@@ -3,19 +3,24 @@ function ready() {
 	var body = document.body;
 	var navbar = document.querySelector('.navbar');
 	var banner = document.querySelector('.banner__content');
+	var workPlanSector = document.querySelector('.work-plan');
+	var advantagesSelector = document.querySelector('.advantages');
 	var advantages = document.querySelectorAll('.advantages__elem');
 	var workPlanElements = document.querySelectorAll('.work-plan__elem');
 
 	window.onscroll = function() {
-		var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-		if (scrolled > 210) {
+		var getAdvantagesCoord = advantagesSelector.getBoundingClientRect();
+		var getWorkPlanCoord = workPlanSector.getBoundingClientRect();
+		var workPlanSectorTop = getWorkPlanCoord.top;
+		var advantagesSelectorTop = getAdvantagesCoord.top;
+		if (advantagesSelectorTop < 200) {
 			advantages.forEach(function(item, i, arr) {
 				setTimeout(function() {
 					arr[i].style.transform = 'scale(1)';
 				}, 200 * i)
 			})
 		};
-		if (scrolled > 4140) {
+		if (workPlanSectorTop < 200 ) {
 			workPlanElements.forEach(function(item, i, arr) {
 				setTimeout(function() {
 					arr[i].style.opacity = 1;
