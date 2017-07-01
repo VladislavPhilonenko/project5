@@ -288,6 +288,7 @@ hr {
 }
 .slider-audio-bg-1 {
 	background-image: url(..//images/slide-audio-1.jpg);
+	background-size: cover;
 }
 .slider-audio-bg-2 {
 	background-image: url(..//images/slide-audio-2.jpg);
